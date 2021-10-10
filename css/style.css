@@ -331,7 +331,7 @@ button {
     display: none;
   }
   .show {
-    transform: translateY(18%);
+    transform: translateY(28%);
   }
   .nav__icon {
     display: none;
@@ -792,7 +792,7 @@ button {
       padding-bottom: 18px;
     }
     .features__texts {
-      margin-bottom: 24px;
+      padding-bottom: 50px;
       width: 580px;
       margin: 0 auto;
     }
