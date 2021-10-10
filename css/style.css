@@ -802,6 +802,9 @@ button {
     .features-inner__text {
       width: 300px;
     }
+    .features-inner__link {
+      font-size: 24px;
+    }
     .features-inner::before {
       margin: 0;
       margin-bottom: 16px;
