@@ -315,23 +315,34 @@ button {
   .site-header {
     background: #fff;
     box-shadow: 0px 0px 10px 1px rgb(0 0 0 / 20%);
+    height: 15vh;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    margin-bottom: 50px;
   }
   .nav {
     display: flex;
     position: fixed;
-    top: 0px;
+    bottom: 0;
     left: 0;
     width:100%;
-    height: 100vh;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    opacity: 0;
     background-color: var(--btn-color);
-    transform: translateY(-1000px);
-    transition: transform 0.4s ease;
+    transform: translateY(15vh);
+    transition: all 0.4s ease;
   }
   .menu-icon__btns {
     display: none;
   }
   .show {
-    transform: translateY(28%);
+    opacity: 1;
+    height: 85vh;
   }
   .nav__icon {
     display: none;
@@ -448,6 +459,31 @@ button {
   animation-name: hero-img;
   animation-duration: 2s;
   animation-iteration-count: infinite;
+}
+
+.fixed-btns {
+  position: fixed;
+  bottom: 30px;
+  right: 10px;
+}
+.fixed-btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: var(--btn-color);
+  position: relative;
+  border-radius: 6px;
+  transition: opacity 0.3s ease;
+}
+.fixed-btn:hover {
+  opacity: 0.7;
+}
+.bx-chevron-up {
+  font-size: 25px;
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  color: #fff;
 }
 @keyframes hero-img {
     0% {
@@ -785,6 +821,7 @@ button {
 @media screen and (min-width:768px) {
     #features {
       padding-top: 100px;
+      padding-bottom: 100px;
     }
     .features__title {
       font-size: 40px;
@@ -808,5 +845,397 @@ button {
     .features-inner::before {
       margin: 0;
       margin-bottom: 16px;
+    }
+}
+/* features end */
+@media screen and (min-width: 320px) {
+  .our__text {
+    color: var(--btn-color);
+    font-size: 13px;
+    padding-bottom: 8px;
+  }
+  .our__title {
+    font-family: var(--font-lato);
+    font-size: 30px;
+    padding-bottom: 20px;
+  }
+  .our__subtext {
+    font-family: var(--font-lato);
+    color: #999;
+    line-height: 24px;
+    padding-bottom: 100px;
+  }
+  .our__item {
+    margin-bottom: 24px;
+  }
+  .our__inner {
+    display: flex;
+    flex-direction: column;
+  }
+  .our__item::before {
+    content: "";
+    width: 115px;
+    height: 115px;
+    display: inline-block;
+    background-image: url("https://themes.templatescoder.com/crypton/html/demo/1-0/02-Light-Theme/images/team-1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border: 5px solid var(--btn-color);
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 8px;
+  }
+  .our__item:nth-child(2)::before {
+    background-image: url("https://themes.templatescoder.com/crypton/html/demo/1-0/02-Light-Theme/images/team-2.jpg");
+  }
+  .our__item:nth-child(3)::before{
+    background-image: url("https://themes.templatescoder.com/crypton/html/demo/1-0/02-Light-Theme/images/team-3.jpg");
+  }
+  .our__item:nth-child(4)::before{
+    background-image: url("https://themes.templatescoder.com/crypton/html/demo/1-0/02-Light-Theme/images/team-4.jpg");
+  }
+  .our__item:hover::before {
+    border-color: #999;
+  }
+  .our__link {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--btn-color);
+    display: inline-block;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+  }
+  .our__link:hover {
+    color: #111;
+  }
+  .our__inner-text {
+    font-family: var(--font-lato);
+    font-size: 14px;
+    line-height: 24px;
+    color: #888;
+    padding-bottom: 15px;
+  }
+  .our__inner-item {
+    margin-left: 25px;
+  }
+  .our__inner-item:nth-child(1) {
+    margin-left: 0;
+  }
+  .our__inner-link {
+    color: #999;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  .our__inner-link:hover {
+    color: var(--btn-color);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .our__text {
+   font-size: 16px;
+  }
+  .our__title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+  }
+  .our__subtext {
+    width: 580px;
+    margin: 0 auto;
+  }
+  .our__item {
+    display: flex;
+    align-items: center;
+  }
+  .our__item::before {
+   width: 146px;
+   height: 146px;
+   margin: 0;
+  }
+  .our__inner {
+    padding-left: 20px;
+  }
+  .our__inner-text {
+    width: 409px;
+  }
+  .our__inner-list {
+    margin-left: 0px;
+  }
+}
+
+/* our end */
+
+@media screen and (min-width:320px) {
+  #token {
+    background-color: #F2F8FE;
+   margin-bottom: 100px;
+  }
+  .token__texts {
+    font-size: 14px;
+    color: var(--btn-color);
+    padding-bottom: 3px;
+    padding-top: 40px;
+  }
+  .token__title {
+    font-size: 25px;
+    color: var(--text-color);
+    font-weight: 400;
+    padding-bottom: 10px;
+  }
+  .token__text {
+    font-family: var(--font-lato);
+    color: #999;
+    width: 290px;
+    font-size: 14px;
+    line-height: 24px;
+    padding-bottom: 20px;
+  }
+  .token__list {
+  }
+  .token__item {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+  .token__item::before {
+    content: "";
+    width: 27px;
+    height: 27px;
+    display: inline-block;
+    background-color: #f85d77;
+    border-radius: 50%;
+  }
+  .token__item:nth-child(2)::before {
+    background-color: #5ad6f8;
+  }
+  .token__item:nth-child(3)::before {
+    background-color: #f8c04e;
+  }
+  .token__item:nth-child(4)::before {
+    background-color: #ac56f7;
+  }
+  .token__item:nth-child(5)::before {
+    background-color: #61f89f;
+  }
+  .token__subtext {
+    font-family: var(--font-lato);
+    font-size: 15px;
+    color: #999;
+    margin-left: 15px;
+  }
+  .token__imgs {
+    padding-bottom: 20px;
+    transform: translateY(-140px);
+    background-image: url("https://themes.templatescoder.com/crypton/html/demo/1-0/02-Light-Theme/images/graph-logo.png");
+    background-repeat: no-repeat;
+    background-size: 120px 87px;
+    background-position: top 190px center;
+  }
+}
+
+@media screen and (min-width: 992px) {
+    #token {
+      background-image: url("https://themes.templatescoder.com/crypton/html/demo/1-0/02-Light-Theme/images/tokensale.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center bottom -90px;
+      background-attachment: fixed;
+    }
+    .token__content {
+      margin-top: 100px;
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+    .token__title {
+      font-size: 40px;
+      font-weight: 600;
+      padding-bottom: 18px;
+    }
+    .token__text {
+      width: 580px;
+    }
+    .token__imgs {
+      transform: translateY(0px);
+      padding-bottom: 0;
+    background-position: top 153px right 220px;
+    }
+    .svg__img {
+      width: 400px;
+      height: 400px;
+    }
+}
+
+/* token end */
+@media screen and (min-width:320px) {
+  .blog__texts {
+  font-size: 14px;
+  color: var(--btn-color);
+  padding-bottom: 5px;
+  }
+  .blog__title {
+    font-size: 25px;
+    font-weight: 400;
+    padding-bottom: 10px;
+  }
+  .blog__text {
+    font-family: var(--font-lato);
+    font-size: 14px;
+    color: #999;
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+  .blog__item {
+    margin-bottom: 32px;
+  }
+  .blog__inner {
+  }
+  .blog__img {
+    width: 260px;
+    height: 156px;
+    padding-bottom: 20px;
+  }
+  .blog__inner-title {
+    width: 238px;
+    font-size: 18px;
+    color: var(--text-color);
+    font-weight: 400;
+    display: inline-block;
+    line-height: 24px;
+    padding-bottom: 18px;
+  }
+  .blog__inner-item {
+
+  }
+  .blog__inner-item:nth-child(1)::after {
+    content: "";
+    width: 2px;
+    height: 10px;
+    display: inline-block;
+    background-color: var(--btn-color);
+    margin-left: 20px;
+  }
+  .blog__inner-link {
+    font-family: var(--font-lato);
+    color: var(--btn-color);
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 18px;
+    margin-bottom: 20px;
+  }
+  .blog__inner-text {
+    font-family: var(--font-lato);
+    font-size: 14px;
+    color: #999;
+    line-height: 24px;
+    padding-bottom: 10px;
+  }
+  .blog__inner-links {
+    font-family: var(--font-lato);
+    font-size: 14px;
+    color: var(--btn-color);
+    text-decoration: underline;
+  }
+}
+@media screen and (min-width:992px) {
+    .blog__title {
+      font-size: 40px;
+    }
+    .blog__text {
+      width: 580px;
+      margin: 0 auto;
+      margin-bottom: 60px;
+    }
+    .blog__img {
+      width: 370px;
+      height: 223px;
+      transform: scale(1);
+      transition: transform 0.4s ease;
+    }
+    .blog__img:hover {
+      transform: scale(1.1);
+    }
+}
+
+/* blog end */
+
+@media screen and (min-width: 320px) {
+  #apps {
+    background-color: #F2F8FE;
+    /* padding-bottom: 50px; */
+  }
+  .apps__texts {
+    font-size: 14px;
+    color: var(--btn-color);
+    padding-top: 50px;
+    padding-bottom: 8px;
+  }
+  .apps__title {
+    font-size: 20px;
+    font-weight: 400px;
+    padding-bottom: 10px;
+  }
+  .apps__text {
+    font-family: var(--font-lato);
+    font-size: 14px;
+    color: #999;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+  .apps__lists {
+    padding-bottom: 30px;
+  }
+  .apps__item {
+    margin-bottom: 24px;
+  }
+  .apps__subtext {
+    font-family: var(--font-lato);
+    font-size: 14px;
+    color: #999;
+    margin-left: 15px;
+
+  }
+  .apps__check {
+    width: 18px;
+    height: 18px;
+    background-color: var(--btn-color);
+    border-radius: 50%;
+    position: relative;
+    margin-left: 15px;
+  }
+  .apps__checkk {
+     width: 14px;
+     height: 14px;
+     position: absolute;
+     top: 2px; 
+     left: 1px;
+     margin-right: 15px;
+  }
+  .apps__btn {
+    padding: 6px 15px;
+    background-color: var(--btn-color);
+    color: #fff;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (min-width:992px) {
+    .apps__title {
+      font-size: 40px;
+    }
+    .apps__imgs {
+      padding-top: 100px;
+    }
+    .apps__btn {
+      padding: 12px 15px;
+      transform: translateY(0);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .apps__btn:hover {
+      transform: translateY(-5px);  
+      box-shadow: 1px 20px 31px -12px var(--btn-color);
     }
 }
